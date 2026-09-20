@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "oxydrive99.keybindbridge",
+  "name": "KeybindBridge",
+  "version": "1.0.4-upl",
+  "dll": "keybind_bridge.dll",
+  "minLoaderVersion": "0.3.0"
+}

@@ -1,0 +1,7 @@
+﻿  main.cpp
+     Создается библиотека E:\SM Mods and Plugins\DLL Plugins\UniversalPluginLoader-v0.1.0-src\bin\x64\Release\vcruntime140_1.lib и объект E:\SM Mods and Plugins\DLL Plugins\UniversalPluginLoader-v0.1.0-src\bin\x64\Release\vcruntime140_1.exp
+  Создание кода
+  Previous IPDB not found, fall back to full compilation.
+  All 1610 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Создание кода завершено
+  UniversalPluginLoader.vcxproj -> E:\SM Mods and Plugins\DLL Plugins\UniversalPluginLoader-v0.1.0-src\bin\x64\Release\vcruntime140_1.dll

@@ -1,0 +1,8 @@
+{
+  "schemaVersion": 1,
+  "id": "oxydrive99.creation-shield-bridge",
+  "name": "CreationShieldBridge",
+  "version": "0.7.0",
+  "dll": "creation_shield_bridge.dll",
+  "minLoaderVersion": "0.3.0"
+}
