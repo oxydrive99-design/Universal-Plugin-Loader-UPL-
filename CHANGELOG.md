@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.4.2
+- Added shared Lua transport with UPL_GetLuaTransportVersion and UPL_RegisterLuaPcallObserver.
+- One loader-owned detour per observed Lua call target prevents migrated plugins from bypassing each other.
+- Preserved per-route continuations, existing EXE import pointers and active-content API version 1.
+- Added thread-local dispatch, observer snapshots, pinned observer lifetimes and Windows x64 regression tests.
+- Validated with CreationShieldBridge 0.7.7 and True Darkness Engine Blackout R2, including an in-game joint run.
+
 ## 0.4.0
 - Added native query API: `UPL_GetApiVersion`, `UPL_IsContentActive`, `UPL_IsPluginActive`.
 - Active UGC state is now tracked transactionally while Scrap Mechanic changes world/mod content.
