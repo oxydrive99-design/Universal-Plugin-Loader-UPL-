@@ -26,14 +26,26 @@
     <TargetName>vcruntime140_1</TargetName><OutDir>$(SolutionDir)bin\x64\Release\</OutDir><IntDir>$(SolutionDir)obj\x64\Release\</IntDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <ClCompile><WarningLevel>Level4</WarningLevel><SDLCheck>true</SDLCheck><ConformanceMode>true</ConformanceMode><LanguageStandard>stdcpp20</LanguageStandard><RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary><PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+    <ClCompile><AdditionalIncludeDirectories>$(ProjectDir)vendor\minhook\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><WarningLevel>Level4</WarningLevel><SDLCheck>true</SDLCheck><ConformanceMode>true</ConformanceMode><LanguageStandard>stdcpp20</LanguageStandard><RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary><PreprocessorDefinitions>_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
     <Link><SubSystem>Windows</SubSystem><ModuleDefinitionFile>$(ProjectDir)UniversalPluginLoader.def</ModuleDefinitionFile></Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile><WarningLevel>Level4</WarningLevel><FunctionLevelLinking>true</FunctionLevelLinking><IntrinsicFunctions>true</IntrinsicFunctions><SDLCheck>true</SDLCheck><ConformanceMode>true</ConformanceMode><LanguageStandard>stdcpp20</LanguageStandard><RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><MultiProcessorCompilation>true</MultiProcessorCompilation><PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
+    <ClCompile><AdditionalIncludeDirectories>$(ProjectDir)vendor\minhook\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories><WarningLevel>Level4</WarningLevel><FunctionLevelLinking>true</FunctionLevelLinking><IntrinsicFunctions>true</IntrinsicFunctions><SDLCheck>true</SDLCheck><ConformanceMode>true</ConformanceMode><LanguageStandard>stdcpp20</LanguageStandard><RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary><MultiProcessorCompilation>true</MultiProcessorCompilation><PreprocessorDefinitions>NDEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions></ClCompile>
     <Link><SubSystem>Windows</SubSystem><EnableCOMDATFolding>true</EnableCOMDATFolding><OptimizeReferences>true</OptimizeReferences><ModuleDefinitionFile>$(ProjectDir)UniversalPluginLoader.def</ModuleDefinitionFile></Link>
   </ItemDefinitionGroup>
-  <ItemGroup><ClCompile Include="src\main.cpp" /></ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\lua_transport.cpp" />
+    <ClCompile Include="vendor\minhook\src\buffer.c" />
+    <ClCompile Include="vendor\minhook\src\hook.c" />
+    <ClCompile Include="vendor\minhook\src\trampoline.c" />
+    <ClCompile Include="vendor\minhook\src\hde\hde64.c" />
+  </ItemGroup>
   <ItemGroup><None Include="UniversalPluginLoader.def" /></ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\lua_observers.h" />
+    <ClInclude Include="src\pcall_routes.h" />
+    <ClInclude Include="include\upl_lua_transport.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
 </Project>

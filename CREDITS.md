@@ -5,3 +5,5 @@ Universal Plugin Loader keeps the `vcruntime140_1.dll` proxy/forwarding mechanis
 Upstream: https://github.com/QuestionableM/SM-DLL-Injector
 
 SM-DLL-Injector is GPL-3.0 licensed. This derivative source package is therefore distributed under GPL-3.0 as well; see `LICENSE`.
+
+The shared Lua transport vendors MinHook by Tsuda Kageyu and contributors (BSD 2-Clause). Its license is preserved in vendor/minhook/LICENSE.txt.

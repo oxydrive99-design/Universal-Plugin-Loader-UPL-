@@ -1,6 +1,12 @@
-# Universal Plugin Loader for Scrap Mechanic — v0.4.0
+# Universal Plugin Loader for Scrap Mechanic — v0.4.2
 
 Universal Plugin Loader keeps one proxy DLL in `Scrap Mechanic/Release`, while native DLL plugins live inside the mod that owns them.
+
+## v0.4.2 — Shared Lua transport
+
+UPL now owns the Lua call detours used by migrated native plugins. Creation Shield and True Darkness Engine Blackout can register observers with one shared transport instead of competing for the same function address.
+
+The existing active-content API stays compatible. Migration instructions, the registration API and validation scope are in [docs/LUA_TRANSPORT.md](docs/LUA_TRANSPORT.md). Run tests with `tests\BUILD_TESTS.bat` from an x64 Developer Command Prompt.
 
 ## v0.4.0 — Plugin diagnostics + compatibility gate
 

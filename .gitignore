@@ -1,0 +1,10 @@
+/tests/build/
+/build/
+*.obj
+*.iobj
+*.ipdb
+*.tlog
+*.pdb
+*.exp
+*.lib
+*.vcxproj.user
