@@ -1,0 +1,24 @@
+#include <windows.h>
+101 RCDATA "../bin/x64/Release/vcruntime140_1.dll"
+1 VERSIONINFO
+FILEVERSION 0,4,2,0
+PRODUCTVERSION 0,4,2,0
+FILEOS VOS_NT_WINDOWS32
+FILETYPE VFT_APP
+BEGIN
+  BLOCK "StringFileInfo"
+  BEGIN
+    BLOCK "040904B0"
+    BEGIN
+      VALUE "FileDescription", "Universal Plugin Loader Installer"
+      VALUE "FileVersion", "0.4.2"
+      VALUE "ProductName", "Universal Plugin Loader"
+      VALUE "ProductVersion", "0.4.2"
+      VALUE "OriginalFilename", "UniversalPluginLoader-Installer-0.4.2.exe"
+    END
+  END
+  BLOCK "VarFileInfo"
+  BEGIN
+    VALUE "Translation", 0x409, 1200
+  END
+END

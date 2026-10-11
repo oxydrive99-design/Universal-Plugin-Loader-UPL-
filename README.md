@@ -8,6 +8,12 @@ UPL now owns the Lua call detours used by migrated native plugins. Creation Shie
 
 The existing active-content API stays compatible. Migration instructions, the registration API and validation scope are in [docs/LUA_TRANSPORT.md](docs/LUA_TRANSPORT.md). Run tests with `tests\BUILD_TESTS.bat` from an x64 Developer Command Prompt.
 
+## Installer
+
+Download `UniversalPluginLoader-Installer-0.4.2.exe` from Releases and run it with the game closed. It finds Steam installations, or lets you select `Release/ScrapMechanic.exe`, preserves the original runtime as `vcruntime140_1_.dll`, and installs or updates UPL.
+
+Build with `installer\BUILD_INSTALLER.bat` from an x64 Developer Command Prompt after building the loader. The installer embeds `bin/x64/Release/vcruntime140_1.dll`; output is in `build/installer`. See [installer/README.md](installer/README.md) for validation and command-line use.
+
 ## v0.4.0 — Plugin diagnostics + compatibility gate
 
 This build keeps the v0.2 Local/Workshop resolver and adds explicit plugin load states plus an optional minimum-loader compatibility gate.
