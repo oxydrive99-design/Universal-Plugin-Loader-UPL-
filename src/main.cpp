@@ -20,11 +20,12 @@
 #include <vector>
 
 namespace fs = std::filesystem;
+void pollLuaTransport(void (*logger)(const std::string&));
 
 namespace
 {
-constexpr wchar_t kLoaderVersion[] = L"0.4.0";
-constexpr char kLoaderVersionText[] = "0.4.0";
+constexpr wchar_t kLoaderVersion[] = L"0.4.2";
+constexpr char kLoaderVersionText[] = "0.4.2";
 constexpr wchar_t kAppId[] = L"387990";
 constexpr wchar_t kManifestRelativePath[] = L"Native\\plugin.json";
 constexpr DWORD kLogPollMs = 40;
@@ -1051,7 +1052,7 @@ DWORD WINAPI loaderWorker(LPVOID)
     }
 
     resetLog();
-    logLine("START: Universal Plugin Loader 0.4.0");
+    logLine("START: Universal Plugin Loader 0.4.2");
     logLine("INFO: DLLs are considered only for ACTIVE Local/Workshop mods");
     logLine("INFO: plugin manifest path is Native/plugin.json");
     logLine("INFO: manifest supports optional minLoaderVersion");
@@ -1124,6 +1125,7 @@ DWORD WINAPI loaderWorker(LPVOID)
     std::vector<char> buffer(64 * 1024);
     for (;;)
     {
+        pollLuaTransport(logLine);
         DWORD bytesRead = 0;
         if (!ReadFile(file, buffer.data(), static_cast<DWORD>(buffer.size()), &bytesRead, nullptr))
         {
